@@ -1,0 +1,21 @@
+spring:
+    application:
+        name: zuul-proxy
+server:
+    port: 8089
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://eureka-server:8761/eureka
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 360000
+ribbon:
+    ReadTimeout: 360000
+zuul:
+  semaphore:
+    maxSemaphores: 5000
